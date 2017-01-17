@@ -1,0 +1,15 @@
+AppBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        steamID:
+            type: string
+            length: 25
+    lifecycleCallbacks: {  }

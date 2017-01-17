@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" media="all" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <div class="cont">
+        <img src="http://kaktusownia.eu/images/vienna/logo.png" class="logo">
+        <div class="nav">
+            {% if app.user %}
+            <a href="#" class="itm">Ostrzeżenia</a>
+            <a href="#" class="itm">Statystyki</a>
+            <a href="#" class="itm">Bany</a>
+            {% else %}
+                <a href="{{ getSteamLoginUrl() }}" class="steam"><img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png"></a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="hdt">Ostrzeżenia</div>
+</div>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>
